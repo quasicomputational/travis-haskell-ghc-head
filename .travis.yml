@@ -10,6 +10,11 @@ jobs:
         script:
           - cabal new-update
           - cabal new-build all --only-dependencies --project-file=cabal.head.project
+      - cabal: head
+        ghc: head
+        script:
+          - cabal new-update
+          - cabal new-build all --only-dependencies --project-file=cabal.project
 language: haskell
 notifications:
     email: false
