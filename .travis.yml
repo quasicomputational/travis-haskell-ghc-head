@@ -19,7 +19,7 @@
                 "cabal": "head",
                 "env": "PROJECT=ghc-head",
                 "ghc": "head",
-                "script": [
+                "script":
                   - cabal new-update
                   - cabal new-build all --only-dependencies --project=file=cabal.head.project
             }
