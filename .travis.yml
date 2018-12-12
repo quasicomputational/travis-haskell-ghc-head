@@ -1,17 +1,15 @@
+cabal: head
 jobs:
     include:
-      - cabal: 2.4
-        ghc: 8.6.3
+      - ghc: 8.6.3
         script:
           - cabal new-update
           - cabal new-build all --only-dependencies -w ghc-8.6.3
-      - cabal: head
-        ghc: head
+      - ghc: head
         script:
           - cabal new-update
           - cabal new-build all --only-dependencies -w ghc-head
-      - cabal: head
-        ghc: head
+      - ghc: head
         script:
           - cabal new-update
           - cabal new-build all --only-dependencies
