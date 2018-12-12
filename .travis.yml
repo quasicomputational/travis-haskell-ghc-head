@@ -1,19 +1,18 @@
-cabal: head
 jobs:
     include:
-      - ghc: 8.6.3
+      - addons: {apt: {packages: [cabal-install-head,ghc-8.0.2,ghc-8.6.3], sources: [hvr-ghc]}}
         script:
           - cabal new-update
           - cabal new-build all --only-dependencies -w ghc-8.6.3
-      - ghc: head
+      - addons: {apt: {packages: [cabal-install-head,ghc-8.0.2,ghc-head], sources: [hvr-ghc]}}
         script:
           - cabal new-update
           - cabal new-build all --only-dependencies -w ghc-head
-      - ghc: head
+      - addons: {apt: {packages: [cabal-install-head,ghc-8.0.2,ghc-head], sources: [hvr-ghc]}}
         script:
           - cabal new-update
           - cabal new-build all --only-dependencies
-language: haskell
+language: generic
 notifications:
     email: false
 sudo: false
