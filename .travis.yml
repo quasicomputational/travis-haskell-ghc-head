@@ -1,33 +1,22 @@
-{
-    "cache": {
-        "directories": [
-            "$HOME/.cabal/store",
-            "$HOME/.cabal/bin"
-        ]
-    },
-    "jobs": {
-        "include": [
-            {
-                "cabal": "2.4",
-                "env": "PROJECT=ghc-8.6",
-                "ghc": "8.6.3",
-                "script":
-                  - cabal new-update
-                  - cabal new-build all --only-dependencies --project=file=cabal.8.6.3.project
-            },
-            {
-                "cabal": "head",
-                "env": "PROJECT=ghc-head",
-                "ghc": "head",
-                "script":
-                  - cabal new-update
-                  - cabal new-build all --only-dependencies --project=file=cabal.head.project
-            }
-        ]
-    },
-    "language": "haskell",
-    "notifications": {
-        "email": false
-    },
-    "sudo": false
-}
+cache:
+    directories:
+        - $HOME/.cabal/store
+        - $HOME/.cabal/bin
+jobs:
+    include:
+      - cabal: 2.4
+        env: PROJECT=ghc-8.6
+        ghc: 8.6.3
+        script:
+          - cabal new-update
+          - cabal new-build all --only-dependencies --project=file=cabal.8.6.3.project
+      - cabal: head
+        env: PROJECT=ghc-head
+        ghc: head
+        script:
+          - cabal new-update
+          - cabal new-build all --only-dependencies --project=file=cabal.head.project
+language: haskell
+notifications:
+    email: false
+sudo: false
