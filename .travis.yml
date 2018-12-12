@@ -10,7 +10,7 @@ jobs:
         script:
           - echo $PATH
           - cabal new-update
-          - cabal new-build all --only-dependencies -w ghc-head
+          - cabal new-build -v2 all --only-dependencies -w ghc-head
       - ghc: head
         script:
           - echo $PATH
