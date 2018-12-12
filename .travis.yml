@@ -3,14 +3,17 @@ jobs:
     include:
       - ghc: 8.6.3
         script:
+          - echo $PATH
           - cabal new-update
           - cabal new-build all --only-dependencies -w ghc-8.6.3
       - ghc: head
         script:
+          - echo $PATH
           - cabal new-update
           - cabal new-build all --only-dependencies -w ghc-head
       - ghc: head
         script:
+          - echo $PATH
           - cabal new-update
           - cabal new-build all --only-dependencies
 language: haskell
