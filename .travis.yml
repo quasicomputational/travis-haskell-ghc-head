@@ -2,14 +2,20 @@ jobs:
     include:
       - addons: {apt: {packages: [cabal-install-head,ghc-8.0.2,ghc-8.6.3], sources: [hvr-ghc]}}
         script:
+          - export PATH=/opt/ghc/ghc-8.6.3/bin:${PATH}
+          - export PATH=/opt/cabal/head/bin:${PATH}
           - cabal new-update
           - cabal new-build all --only-dependencies -w ghc-8.6.3
       - addons: {apt: {packages: [cabal-install-head,ghc-8.0.2,ghc-head], sources: [hvr-ghc]}}
         script:
+          - export PATH=/opt/ghc/ghc-head/bin:${PATH}
+          - export PATH=/opt/cabal/head/bin:${PATH}
           - cabal new-update
           - cabal new-build all --only-dependencies -w ghc-head
       - addons: {apt: {packages: [cabal-install-head,ghc-8.0.2,ghc-head], sources: [hvr-ghc]}}
         script:
+          - export PATH=/opt/ghc/ghc-head/bin:${PATH}
+          - export PATH=/opt/cabal/head/bin:${PATH}
           - cabal new-update
           - cabal new-build all --only-dependencies
 language: generic
