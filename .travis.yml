@@ -1,6 +1,8 @@
 language: haskell
-ghc: head
-cabal: head
-script:
-  - cabal v2-update
-  - cabal v2-build
+jobs:
+  - ghc: head
+    cabal: head
+    install: []
+    script:
+      - cabal v2-update
+      - cabal v2-build
