@@ -1,9 +1,11 @@
 language: haskell
-matrix:
-  jobs:
+jobs:
+  include:
     - ghc: head
       cabal: head
       install: []
       script:
         - cabal v2-update
         - cabal v2-build
+notifications:
+  email: false
